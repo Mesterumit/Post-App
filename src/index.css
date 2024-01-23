@@ -110,19 +110,6 @@ abbr:where([title]) {
   text-decoration: underline dotted;
 }
 
-/*
-Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
 
 /*
 Reset links to optimize for opt-in styling instead of opt-out.
@@ -206,62 +193,10 @@ table {
   /* 3 */
 }
 
-/*
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-3. Remove default padding in all browsers.
-*/
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-feature-settings: inherit;
-  /* 1 */
-  font-variation-settings: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  font-weight: inherit;
-  /* 1 */
-  line-height: inherit;
-  /* 1 */
-  color: inherit;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  padding: 0;
-  /* 3 */
-}
 
-/*
-Remove the inheritance of text transform in Edge and Firefox.
-*/
 
-button,
-select {
-  text-transform: none;
-}
 
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Remove default button styles.
-*/
-
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button;
-  /* 1 */
-  background-color: transparent;
-  /* 2 */
-  background-image: none;
-  /* 2 */
-}
 
 /*
 Use the modern Firefox focus style for all focusable elements.
@@ -792,8 +727,8 @@ select:not([size]) {
 }
 
 input[type=file]::file-selector-button {
-  color: white;
-  background: #1F2937;
+  /* color: white; */
+  /* background: #1F2937; */
   border: 0;
   font-weight: 500;
   font-size: 0.875rem;
@@ -806,23 +741,23 @@ input[type=file]::file-selector-button {
   margin-inline-end: 1rem;
 }
 
-input[type=file]::file-selector-button:hover {
+/* input[type=file]::file-selector-button:hover {
   background: #374151;
-}
+} */
 
-:is([dir=rtl]) input[type=file]::file-selector-button {
+/* :is([dir=rtl]) input[type=file]::file-selector-button {
   padding-right: 2rem;
   padding-left: 1rem;
-}
+} */
 
-.dark input[type=file]::file-selector-button {
+/* .dark input[type=file]::file-selector-button {
   color: white;
   background: #4B5563;
 }
 
 .dark input[type=file]::file-selector-button:hover {
   background: #6B7280;
-}
+} */
 
 input[type="range"]::-webkit-slider-thumb {
   height: 1.25rem;

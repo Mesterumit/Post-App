@@ -1,5 +1,5 @@
 import { Avatar, DarkThemeToggle, Dropdown } from "flowbite-react";
-// import useAuthCalls from "../hooks/useAuthCalls";
+import useAuthCalls from "../hooks/useAuthCalls";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -27,18 +27,22 @@ const links = [
 ];
 
 const NavBar = () => {
-//   const { logout } = useAuthCalls();
-//   const { currentUser } = useSelector(state => state.auth);
-const currentUser = {
-    id:58,
-    username:'umitmester',
-    first_name: 'Umit',
-    last_name: 'Mester',
-    email: 'umit@gmail.com',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png',
-    bio: "I am Umit",
-    token: "yes"
-}
+  const { logout } = useAuthCalls();
+  const  currentUser  = useSelector(state => state.auth.currentUser);
+  console.log("currentUser:", currentUser);
+  console.log("Entire State:", useSelector(state => state));
+ 
+  
+// const currentUser = {
+//     id:58,
+//     username:'umitmester',
+//     first_name: 'Umit',
+//     last_name: 'Mester',
+//     email: 'umit@gmail.com',
+//     image: 'https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png',
+//     bio: "I am Umit",
+//     token: "yes"
+// }
   const navigate = useNavigate();
 
   return (
@@ -50,7 +54,7 @@ const currentUser = {
           onClick={() => navigate("/")}
           role="button"
           className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Anthony Harold's Blog
+          Umit Mester's Blog
         </span>
 
         <div className="flex md:order-2 z-30">
@@ -66,7 +70,7 @@ const currentUser = {
         {currentUser ? (
               <>
                 <Dropdown.Header>
-                  <span className="block text-sm">{currentUser?.username}</span>
+                  <span className="block text-sm">{currentUser?.first_name}</span>
                   <span className="block truncate text-sm font-medium">
                     {currentUser?.email}
                   </span>

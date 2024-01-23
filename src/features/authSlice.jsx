@@ -14,6 +14,7 @@ const authSlice = createSlice({
       state.error = false;
     },
     loginSuccess: (state, { payload }) => {
+      console.log("Payload for login:", payload);
       state.currentUser = payload?.user;
       state.loading = false;
       state.error = false;
@@ -24,8 +25,10 @@ const authSlice = createSlice({
       state.loading = false;
       state.error = false;
       state.token = null;
+      console.log("log out :" ,state.token)
     },
     registerSuccess: (state, { payload }) => {
+      console.log("register Payload :" , payload)
       state.currentUser = payload;
       state.token = payload?.token;
       state.error = false;
