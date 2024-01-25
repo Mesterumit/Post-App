@@ -3,7 +3,7 @@ import { Form } from "formik";
 import * as Yup from "yup";
 import { useSelector } from "react-redux";
 import { Spinner } from "flowbite-react";
-import { registerIcon } from "../helper/iconData";
+import { registerIcon } from "../../helper/iconData";
 
 export const registerSchema = Yup.object().shape({
   first_name: Yup.string()

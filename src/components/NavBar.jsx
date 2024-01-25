@@ -30,7 +30,7 @@ const NavBar = () => {
   const { logout } = useAuthCalls();
   const  currentUser  = useSelector(state => state.auth.currentUser);
   console.log("currentUser:", currentUser);
-  console.log("Entire State:", useSelector(state => state));
+  // console.log("Entire State:", useSelector(state => state));
  
   
 // const currentUser = {

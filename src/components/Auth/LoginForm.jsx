@@ -15,7 +15,7 @@ export const loginSchema = Yup.object().shape({
 const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
   const { loading } = useSelector(state => state.auth);
   return (
-    <section className="h-screen mb-9 w-full">
+    <section className="h-screen mb-9 w-full  bg-white dark:bg-gray-800 dark:text-white">
       <div className="h-full w-full text-gray-800">
         <div className="flex justify-center items-center flex-wrap w-full h-full g-6">
           <div className="xl:w-6/12 lg:w-6/12 w-9/12 mb-12 md:mb-0">

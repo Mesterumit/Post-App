@@ -21,6 +21,9 @@ const blogSlice = createSlice({
               // Set the posts directly without the "post" object
               state.posts = data;
             } else {
+                // i have an categories as initial States
+               // In  reducer, you handle this action in the getSuccess case. If the url is "categories," you update state.categories with the provided data:
+                // dispatch(getSuccess({ data: someData, url: "categories" }));
               state[url] = data;
             }
           },

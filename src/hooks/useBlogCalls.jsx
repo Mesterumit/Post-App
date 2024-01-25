@@ -1,4 +1,3 @@
-// import { axiosWithToken } from "../service/axiosInstance";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFail, fetchStart, getSuccess } from "../features/blogSlice";
 import useAxios from "./useAxios";
@@ -31,7 +30,7 @@ const useBlogCalls =()=>{
   const getUserBlogs = async () => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.get(`api/posts?author=${currentUser.id}`);
+      const { data } = await axiosWithToken.get(`api/posts?author=${currentUser._id}`);
       dispatch(getSuccess({ data, url: "myPosts" }));
     } catch (error) {
       dispatch(fetchFail());

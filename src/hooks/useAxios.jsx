@@ -16,7 +16,7 @@ const useAxios = () => {
   //* Axios Instance for Private API Request
   const axiosWithToken = axios.create({
     baseURL: BASE_URL,
-    headers: { Authorization: `Token ${token}` },
+    headers: { Authorization: `Bearer ${token}` },
   });
   // similar to axiosPublic, just within the hook.
   const axiosWithoutToken = axios.create({
