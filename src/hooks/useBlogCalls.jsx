@@ -25,7 +25,7 @@ const useBlogCalls =()=>{
     }
   };
 
-  const getBlogs = () => getBlogData("posts");
+  const getBlogs = async() =>await getBlogData("posts");
   const getCategories = () => getBlogData("categories");
   const getUserBlogs = async () => {
     dispatch(fetchStart());

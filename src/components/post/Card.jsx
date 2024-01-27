@@ -13,6 +13,7 @@ const Card =({post,like})=>{
     const navigate = useNavigate()
     // console.log("Image Path:", post.image);
     console.log("Likes :", like)
+    console.log("Post :", post)
   const { createLike } = useLikesCalls();
 
   
