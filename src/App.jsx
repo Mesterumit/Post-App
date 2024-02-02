@@ -22,7 +22,7 @@ function App() {
   //   return <div>Loading...</div>;
   
   return (
-    <>
+    <div className="bg-slate-300 dark:bg-gray-800 dark:text-white">
       <Flowbite>
         <Provider store={store}>
           {/* persister store */}
@@ -32,7 +32,7 @@ function App() {
         </Provider>
       </Flowbite>
 
-    </>
+    </div>
 
 
   )

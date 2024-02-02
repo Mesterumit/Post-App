@@ -74,17 +74,8 @@ html,
   /* 7 */
 }
 
-/*
-1. Remove the margin in all browsers.
-2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
-*/
 
-body {
-  margin: 0;
-  /* 1 */
-  line-height: inherit;
-  /* 2 */
-}
+
 
 /*
 1. Add the correct height in Firefox.
@@ -157,43 +148,6 @@ Add the correct font size in all browsers.
 small {
   font-size: 80%;
 }
-
-/*
-Prevent `sub` and `sup` elements from affecting the line height in all browsers.
-*/
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/*
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-3. Remove gaps between table borders by default.
-*/
-
-table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-  border-collapse: collapse;
-  /* 3 */
-}
-
-
 
 
 
@@ -3487,13 +3441,6 @@ input:checked + .toggle-bg {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.first\:ml-0:first-child {
-  margin-left: 0px;
-}
-
-.first\:mt-0:first-child {
-  margin-top: 0px;
-}
 
 .first\:rounded-t-lg:first-child {
   border-top-left-radius: 0.5rem;
@@ -3508,9 +3455,7 @@ input:checked + .toggle-bg {
   padding-top: 0px;
 }
 
-.last\:mr-0:last-child {
-  margin-right: 0px;
-}
+
 
 .last\:rounded-b-lg:last-child {
   border-bottom-right-radius: 0.5rem;

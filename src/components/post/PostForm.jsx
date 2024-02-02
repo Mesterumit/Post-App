@@ -1,8 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const PostForm = ({ info, handleChange, handleSubmit }) => {
-  const { categories } = useSelector(state => state.blog);
+const PostForm = ({ info,handleChange,  handleSubmit }) => {
+  const { categories } = useSelector(state => state.post);
+  
+  // const { data } = info;
+  console.log("INFO.TITLE---",info.title)
+  console.log("INFO---",info)
   return (
     <div className="mt-5">
       <form onSubmit={handleSubmit} className="form">
@@ -18,7 +22,7 @@ const PostForm = ({ info, handleChange, handleSubmit }) => {
               type="text"
               name="title"
               id="title"
-              value={info?.title || ""}
+              value={info.title}
               onChange={handleChange}
             />
             <p className="text-red text-xs hidden">
@@ -54,7 +58,7 @@ const PostForm = ({ info, handleChange, handleSubmit }) => {
               placeholder="https://"
               name="image"
               id="image"
-              value={info?.image || ""}
+              value={info.image || ""}
               onChange={handleChange}
             />
           </div>
@@ -69,10 +73,10 @@ const PostForm = ({ info, handleChange, handleSubmit }) => {
               required="required"
               name="category"
               id="category"
-              value={info?.category || ""}
+              value={info.category || ""}
               onChange={handleChange}>
-              {categories?.map(item => (
-                <option key={item.id} value={item.id}>
+              {categories?.data.map(item => (
+                <option key={item._id} value={item._id}>
                   {item.name}
                 </option>
               ))}
@@ -90,11 +94,11 @@ const PostForm = ({ info, handleChange, handleSubmit }) => {
               required="required"
               name="status"
               id="status"
-              value={info?.status || ""}
+              value={info.status || ""}
               onChange={handleChange}>
               <option value>Please choose...</option>
-              <option value="d">Draft</option>
-              <option value="p">Published</option>
+              <option value="unpublished">unpublished</option>
+              <option value="published">Published</option>
             </select>
             <p className="text-sm text-red-500 hidden mt-3" id="error">
               Please fill out this field.
@@ -107,14 +111,14 @@ const PostForm = ({ info, handleChange, handleSubmit }) => {
             required
             name="content"
             id="content"
-            value={info?.content || ""}
+            value={info.content || ""}
             onChange={handleChange}
             className="w-full min-h-[100px] max-h-[300px] h-28 appearance-none block bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg py-4 px-4"
             placeholder="The content write here..."
             spellCheck="false"
           />
           <p className="text-xs text-gray-400 text-left my-3">
-            You inserted {info?.content.length || 0} characters
+            You inserted {info.content.length || 0} characters
           </p>
         </div>
         <p className="text-xs text-red-500 text-right my-3">

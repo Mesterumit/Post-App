@@ -1,9 +1,10 @@
 import { Spinner } from "flowbite-react/";
 import { Form } from "formik";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import loginImage from "../../assets/login.webp";
 import * as Yup from "yup";
+import { fetchFail} from "../../features/authSlice";
 
 export const loginSchema = Yup.object().shape({
   email: Yup.string()
@@ -12,8 +13,16 @@ export const loginSchema = Yup.object().shape({
   password: Yup.string().required("Password is mandatory"),
 });
 
+
+
 const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
   const { loading } = useSelector(state => state.auth);
+  const dispatch = useDispatch()
+
+setTimeout(() => {
+  dispatch(fetchFail(false)); 
+},3000) 
+  console.log("LOADING :", loading)
   return (
     <section className="h-screen mb-9 w-full  bg-white dark:bg-gray-800 dark:text-white">
       <div className="h-full w-full text-gray-800">
@@ -70,7 +79,7 @@ const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
               <div className="text-center lg:text-center">
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={loading === true}
                   className="inline-block px-7 py-3 bg-slate-500 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
                   {!loading ? (
                     "Login"

@@ -7,7 +7,7 @@ const CommentForm = ({ id, getDetailData }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const commentData = {
-      post: id,
+      postId: id,
       content: inputRef.current.value,
     };
     postComments(commentData, getDetailData);

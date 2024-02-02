@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const links = [
   {
     title: "Dashboard",
-    path: "/",
+    path: "/dashboard",
   },
   {
     title: "New Blog",
@@ -47,7 +47,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="dark:bg-slate-600 bg-slate-500 flex justify-between items-center p-4 text-white fixed top-0 w-full z-10">
+      <nav className="dark:bg-slate-800 bg-slate-500 flex justify-between items-center p-4 text-white fixed top-0 w-full z-10">
         <DarkThemeToggle className="bg-white dark:bg-slate-500" />
 
         <span
@@ -76,13 +76,13 @@ const NavBar = () => {
                   </span>
                 </Dropdown.Header>
                 {links.map(item => (
-                  <Dropdown.Item key={item.title} onClick={() => navigate(item.path)}>
+                  <Dropdown.Item className="bg-white dark:bg-slate-500" key={item.title} onClick={() => navigate(item.path)}>
                     {item.title}
                   </Dropdown.Item>
                 ))}
 
                 <Dropdown.Divider />
-                <Dropdown.Item onClick={() => logout()}>Sign out</Dropdown.Item>
+                <Dropdown.Item className="bg-white dark:bg-slate-500" onClick={() => logout()}>Sign out</Dropdown.Item>
               </>
             ) : (
               <>
