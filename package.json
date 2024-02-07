@@ -1,16 +1,17 @@
 {
+  "homepage": "https://Mesterumit.github.io/Blog_APP_REACT_REDUX",
   "name": "blog-app-fe",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Mesterumit.github.io/Blog_APP_REACT_REDUX",
+
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": " vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "preview": "vite preview",  
     "clean": "gh-pages-clean"
   },
   "dependencies": {
@@ -32,6 +33,9 @@
     "node": ">=19.8.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
