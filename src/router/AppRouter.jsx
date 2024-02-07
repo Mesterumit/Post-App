@@ -8,7 +8,8 @@ import Profile from "../pages/Profile";
 import PrivateRouter from "./PrivateRouter";
 import FooTer from "../components/FooTer";
 import NavBar from '../components/NavBar';
-
+import MyBlogs from "../pages/MyBlogs";
+import About from "../pages/About";
 const AppRouter = () => {
     return (
         <Router>
@@ -25,9 +26,10 @@ const AppRouter = () => {
                 <Route path="/newblog" element={<NewBlog />} />
                  <Route path="/profile" element={<Profile />} />
                 <Route path="/detail/:id" element={<Detail />} />
-
+                <Route path="/my-blogs" element={<MyBlogs />} />
                 </Route>
-                
+
+                <Route path="/about" element={<About />} />
             </Routes>
             <br></br>
             <FooTer />

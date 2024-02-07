@@ -25,20 +25,23 @@ const useBlogCalls =()=>{
     }
   };
 
-  const getBlogs = async() =>await getBlogData("posts");
+  const getBlogs = ()=>getBlogData("posts");
   const getCategories = () => getBlogData("categories");
+
+
   const getUserBlogs = async () => {
     dispatch(fetchStart());
     try {
-      const { data } = await axiosWithToken.get(`api/posts?author=${currentUser._id}`);
-      dispatch(getSuccess({ data, url: "myPosts" }));
+      const { data } = await axiosWithToken.get(`api/users/${currentUser._id}/posts/`);
+      console.log("MYBLOGS----", data)
+      dispatch(getSuccess({ data, url: "MyPosts" }));
     } catch (error) {
       dispatch(fetchFail());
       console.log(error);
     }
   }
 
-  const postBlog = info => postBlogData(info, "posts");
+  const postBlog = info => postBlogData(info, "posts/");
 
   //!------------- Post Comments ----------------
   //@URL Post/api/comments/
@@ -99,6 +102,7 @@ const useBlogCalls =()=>{
     getCategories,
     putBlog,
     deleteBlogs,
+    getUserBlogs,
   }
 }
 

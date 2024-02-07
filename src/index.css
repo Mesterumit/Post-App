@@ -22,6 +22,12 @@
   box-sizing: border-box;
   
 }
+.imageWidth{
+  width:80% !important;
+}
+.detail{
+  margin-top:30px !important;
+}
 body {
   overflow-x: hidden;
 }

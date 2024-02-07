@@ -73,7 +73,7 @@ const NewsCard = () => {
             </div>
           </div>
         )}
-        <div className="flex w-11/12">
+        <div className="flex w-11/12 ">
           <Button
             onClick={handleClick}
             className="mx-auto m-3"

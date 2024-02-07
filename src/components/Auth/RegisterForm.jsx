@@ -36,7 +36,7 @@ const RegisterForm = ({
   const { loading } = useSelector(state => state.auth);
   return (
     <div>
-      <div className="min-w-screen min-h-screen flex items-center justify-center px-5 py-5">
+      <div className="min-w-screen min-h-screen flex items-center justify-center px-5 py-5 h-screen">
         <div
           className="bg-gray-100 dark:bg-gray-800 dark:text-white text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
           style={{ maxWidth: "1000px" }}>
@@ -70,7 +70,7 @@ const RegisterForm = ({
                             ? "input border-red-600"
                             : "input border-gray-300"
                         }
-                        placeholder="Anthony"
+                        placeholder="Umit"
                         value={values.first_name}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -100,7 +100,7 @@ const RegisterForm = ({
                             ? "input border-red-600"
                             : "input border-gray-300"
                         }
-                        placeholder="Harold"
+                        placeholder="Mester"
                         value={values.last_name}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -129,7 +129,7 @@ const RegisterForm = ({
                             ? "input border-red-600"
                             : "input border-gray-300"
                         }
-                        placeholder="anthoynharold@example.com"
+                        placeholder="umit@example.com"
                         value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}

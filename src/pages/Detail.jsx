@@ -62,7 +62,7 @@ const Detail = () => {
         setOpenDelete(false);
     };
 
-    const [isPublished, setIsPublished] = useState(true)
+    const [isPublished, setIsPublished] = useState(false)
     const textColorClass = isPublished ? "text-green-600" : "text-red-600";
     const handleTogglePublished = () => {
         // Check if the current status is 'published'
@@ -80,7 +80,7 @@ const Detail = () => {
         try {
             // Make API request to update status
             await axiosWithToken.put(`api/posts/${id}`, { status: newStatus });
-            // Optionally, you can refresh the detail data after updating the status
+            //  you can refresh the detail data after updating the status
             getDetailData();
         } catch (error) {
             console.error('Error updating status:', error);
@@ -129,11 +129,11 @@ const Detail = () => {
     return (
         <>
             {!loading ? (
-                <article className=" my-auto  max-w-2xl px-auto py-12 mx-auto space-y-8 h-screen dark:bg-gray-800 dark:text-gray-50">
-                    <div className="w-full bg-white grid place-items-center">
+                <article className=" my-auto  max-w-2xl px-auto py-12 mx-auto space-y-8 h-screen dark:bg-gray-800 dark:text-gray-50 m-10">
+                    <div className="w-full bg-white grid place-items-center detail">
                         <img src={detail?.data?.image} alt={detail?.data?.title} className="rounded-xl" />
                     </div>
-                    <div className="w-full mx-auto space-y-4 text-center">
+                    <div className="w-full mx-auto  space-y-4 text-center">
                         <h1 className="text-4xl font-bold leading-tight md:text-5xl">
                             {detail.data.title}
                         </h1>
@@ -144,7 +144,7 @@ const Detail = () => {
                             </span>
                             on
                             <time className="p-1">
-                                {new Date(detail.data.published_date).toLocaleString()}
+                                {new Date(detail.data.createdAt).toLocaleString().split(',',1)}
                             </time>
                         </p>
                     </div>
@@ -224,13 +224,15 @@ const Detail = () => {
 
                             </div>
                             <div className="border-gray-600">
-                                <label className={`${textColorClass}`}>
+                                <label id='checkedBox'className={`${textColorClass}`}>
                                     {detail?.data?.status.toUpperCase()}
                                 </label>
                                 <input
-                                    className="w-4 h-4 mx-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                    className={`w-4 h-4 mx-4 ${isPublished ? 'text-green-600 focus:ring-green-500' : 'text-red-600 focus:ring-red-500'}  bg-gray-100 border-gray-300 rounded   dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600`}
+                                    
                                     type="checkbox"
                                     name="published"
+                                    for='checkedBox'
                                     onChange={handleTogglePublished}
                                 />
                             </div>

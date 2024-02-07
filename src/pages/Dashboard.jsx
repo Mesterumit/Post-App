@@ -60,7 +60,7 @@ const Dashboard = () => {
 
     // make the news card
     return (
-        <div className="dark:bg-slate-300 h-screen w-full flex p-5 justify-center gap-5 dark:text-white">
+        <div className="dark:bg-slate-800 h-screen w-full flex p-5 justify-center gap-5 dark:text-white">
             <div className="p-6 mt-20 flex flex-col w-8/12 max-[600px]:w-full 2xl:w-6/12">
                 {data?.map(post => (
                     <Card  key={post._id} post={post} />
@@ -68,7 +68,7 @@ const Dashboard = () => {
 
 
                 {posts?.data.length > 3 && (
-                    <div className="flex w-11/12">
+                    <div className="flex w-11/12 ">
                         {/* flowbite */}
                         <Button
                             onClick={handleClick}

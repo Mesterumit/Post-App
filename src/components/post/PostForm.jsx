@@ -3,10 +3,8 @@ import { useSelector } from "react-redux";
 
 const PostForm = ({ info,handleChange,  handleSubmit }) => {
   const { categories } = useSelector(state => state.post);
-  
-  // const { data } = info;
-  console.log("INFO.TITLE---",info.title)
-  console.log("INFO---",info)
+  console.log("test categories:", categories);
+
   return (
     <div className="mt-5">
       <form onSubmit={handleSubmit} className="form">
@@ -67,8 +65,8 @@ const PostForm = ({ info,handleChange,  handleSubmit }) => {
           <div className="w-full flex flex-col mb-3">
             <label className="font-semibold text-gray-600 py-2">
               Category <abbr title="required">*</abbr>
-            </label>
-            <select
+            </label> 
+             <select
               className="block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 md:w-full "
               required="required"
               name="category"

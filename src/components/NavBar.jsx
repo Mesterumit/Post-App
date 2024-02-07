@@ -22,7 +22,7 @@ const links = [
   },
   {
     title: "About",
-    path: "/",
+    path: "/about",
   },
 ];
 
@@ -51,7 +51,7 @@ const NavBar = () => {
         <DarkThemeToggle className="bg-white dark:bg-slate-500" />
 
         <span
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/dashboard")}
           role="button"
           className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Umit Mester's Blog
@@ -86,10 +86,10 @@ const NavBar = () => {
               </>
             ) : (
               <>
-                <Dropdown.Item onClick={() => navigate("/login")}>
+                <Dropdown.Item className='bg-gray-100 dark:bg-gray-800 dark:text-white text-gray-500' onClick={() => navigate("/login")}>
                   Login
                 </Dropdown.Item>
-                <Dropdown.Item onClick={() => navigate("/register")}>
+                <Dropdown.Item  className='bg-gray-100 dark:bg-gray-800 dark:text-white text-gray-500' onClick={() => navigate("/register")}>
                   Register
                 </Dropdown.Item>
               </>

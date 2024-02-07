@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import useBlogCalls from "../hooks/useBlogCalls";
-import BlogForm from "../components/post/PostForm";
+import PostForm from "../components/post/PostForm";
+import { useSelector } from "react-redux";
+
 
 const initialState = {
   title:"",
   image:"",
-  category:'',
+  category:1,
   status:"",
   content:"",
 }
@@ -14,7 +16,7 @@ const NewBlog = () => {
   const [info,setInfo] = useState(initialState)
   
   const { postBlog} = useBlogCalls();
-
+ 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,7 +45,7 @@ const NewBlog = () => {
               <h2 className="font-semibold text-lg mr-auto">New Blog</h2>
               <div className="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0" />
             </div>
-            <BlogForm info={info} handleChange={handleChange} handleSubmit={handleSubmit} />
+            <PostForm info={info} handleChange={handleChange} handleSubmit={handleSubmit} />
           </div>
         </div>
       </div>
