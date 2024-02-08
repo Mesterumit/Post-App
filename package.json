@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Mesterumit.github.io/Blog_APP_REACT_REDUX",
+  "homepage": "https://Mesterumit.github.io/Blog_APP-REACT-REDUX",
   "name": "blog-app-fe",
   "private": true,
   "version": "0.0.0",
@@ -9,9 +9,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "build": " vite build",
+    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",  
+    "preview": "vite preview --port 8080",  
     "clean": "gh-pages-clean"
   },
   "dependencies": {
