@@ -19,6 +19,9 @@ const About = () => {
             <p className="px-5 text-xs sm:text-base dark:text-gray-400">
               Full-stack developer
             </p>
+            <p className="px-5 text-xs sm:text-base dark:text-gray-400">
+              Working as Full-Stack Developer at NioyaTech.
+            </p>
           </div>
           <div className="flex justify-center pt-2 space-x-4 align-center">
             <a

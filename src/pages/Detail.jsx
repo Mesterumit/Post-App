@@ -13,23 +13,20 @@ import DeleteModal from "../components/post/DeleteModal";
 import Loading from "../components/Loading";
 
 const Detail = () => {
+
     const { id } = useParams();
-    console.log("id from useParams:", id);
-    const [detail, setDetail] = useState({});
-    console.log("Detail :", detail)
-    //   console.log("detail likes length:", detail.likes.length);
+
     const [loading, setLoading] = useState(true);
     const [showComment, setShowComment] = useState(false);
     const [open, setOpen] = useState(false);
     const [openDelete, setOpenDelete] = useState(false);
-
     const { axiosWithToken } = useAxios();
     const { currentUser } = useSelector(state => state.auth);
-    console.log("CURRENTUSER :", currentUser.first_name)
-
-    // console.log("authour :", detail.data.author.first_name)
 
 
+    const [detail, setDetail] = useState({});
+    const [isPublished, setIsPublished] = useState(detail?.data?.status)
+    console.log("DETAIL SATTUS------", detail?.data?.status)
 
 
 
@@ -39,7 +36,7 @@ const Detail = () => {
         try {
             console.log("Request Headers:", axiosWithToken.defaults.headers);
             const { data } = await axiosWithToken.get(`api/posts/${id}`);
-            console.log("Data from API:", data);
+            console.log("-----DATA----", data)
             setDetail(data)
             setLoading(false);
         } catch (error) {
@@ -62,25 +59,21 @@ const Detail = () => {
         setOpenDelete(false);
     };
 
-    const [isPublished, setIsPublished] = useState(false)
-    const textColorClass = isPublished ? "text-green-600" : "text-red-600";
+
     const handleTogglePublished = () => {
-        // Check if the current status is 'published'
+
         if (detail?.data?.status === 'published') {
-            // If published, update to 'unpublished'
-            setIsPublished(false); // Update local state
-            updateStatus('unpublished'); // Send 'unpublished' to API
+            updateStatus('unpublished');
+            setIsPublished(detail?.data?.status);
         } else {
-            // If unpublished, update to 'published'
-            setIsPublished(true); // Update local state
-            updateStatus('published'); // Send 'published' to API
+            setIsPublished(detail?.data?.status);
+            updateStatus('published');
         }
     };
+
     const updateStatus = async (newStatus) => {
         try {
-            // Make API request to update status
             await axiosWithToken.put(`api/posts/${id}`, { status: newStatus });
-            //  you can refresh the detail data after updating the status
             getDetailData();
         } catch (error) {
             console.error('Error updating status:', error);
@@ -92,8 +85,9 @@ const Detail = () => {
         getDetailData();
     }, []);
 
-
-    //@URL Post/api/like
+    useEffect(() => {
+        setIsPublished(detail?.data?.status || '');
+    }, [detail]);
 
     const handleClick = async () => {
         try {
@@ -105,18 +99,16 @@ const Detail = () => {
             if (isLiked) {
                 // Using the first element's _id if it is exist in db and store
                 const likeId = detail.likes[0]._id || null;
-                console.log("like id:", likeId);
+
 
                 if (likeId) {
                     console.log("Deleting like");
                     await axiosWithToken.delete(`api/like/${likeId}`);
                 }
             } else {
-                console.log("Creating like");
                 await axiosWithToken.post(`api/like`, { userId: id, postId: detail.data._id });
             }
 
-            // Refresh the post details after updating the like
             getDetailData();
         } catch (error) {
             console.error(error.response?.data?.error || error.message);
@@ -124,12 +116,10 @@ const Detail = () => {
     };
 
 
-    console.log(detail?.data?.status)
-
     return (
         <>
             {!loading ? (
-                <article className=" my-auto  max-w-2xl px-auto py-12 mx-auto space-y-8 h-screen dark:bg-gray-800 dark:text-gray-50 m-10">
+                <article className=" my-auto  max-w-2xl px-auto py-12 mx-auto space-y-8 h-screen h-100 dark:bg-gray-800 dark:text-gray-50 ">
                     <div className="w-full bg-white grid place-items-center detail">
                         <img src={detail?.data?.image} alt={detail?.data?.title} className="rounded-xl" />
                     </div>
@@ -144,7 +134,7 @@ const Detail = () => {
                             </span>
                             on
                             <time className="p-1">
-                                {new Date(detail.data.createdAt).toLocaleString().split(',',1)}
+                                {new Date(detail.data.createdAt).toLocaleString().split(',', 1)}
                             </time>
                         </p>
                     </div>
@@ -224,23 +214,22 @@ const Detail = () => {
 
                             </div>
                             <div className="border-gray-600">
-                                <label id='checkedBox'className={`${textColorClass}`}>
-                                    {detail?.data?.status.toUpperCase()}
+                                <label id='checkedBox' className={isPublished == 'published' ? 'text-green-600' : 'text-red-600'}>
+                                    {detail?.data?.status}
                                 </label>
                                 <input
-                                    className={`w-4 h-4 mx-4 ${isPublished ? 'text-green-600 focus:ring-green-500' : 'text-red-600 focus:ring-red-500'}  bg-gray-100 border-gray-300 rounded   dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600`}
-                                    
+                                    className={`${isPublished  == 'published' ? 'text-green-600 focus:ring-green-500' : 'text-red-600 focus:ring-red-500'} w-4 h-4 mx-4 bg-gray-100 border-gray-300 rounded dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600`}
                                     type="checkbox"
-                                    name="published"
-                                    for='checkedBox'
-                                    onChange={handleTogglePublished}
+                                    name={isPublished == 'published' ? 'published' : 'unpublished'}
+                                    htmlFor='checkedBox'
+                                    onClick={handleTogglePublished}
                                 />
                             </div>
                         </div>
                     </div>
 
                     {currentUser?.first_name == detail?.data.author.first_name && (
-                        <div className="flex justify-center pt-4 space-x-4 align-center">
+                        <div className="flex justify-center pt-4 space-x-4 align-center ">
                             <Button
                                 onClick={handleOpen}
                                 outline={true}

@@ -1,26 +1,13 @@
 import { Button } from 'flowbite-react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import createLike from "../../hooks/useLikeCalls";
-import useLikesCalls from "../../hooks/useLikeCalls";
 
-const Card = ({ post,likes,}) => {
 
-  console.log("POST DETAIL", post)
-  console.log("POST likes", likes)
-  const dispatch = useDispatch();
-  const { currentUser } = useSelector(state => state.auth)
-  // const [likesCount, setLikesCount] = useState(0);
+
+
+const Card = ({ post}) => {
   const navigate = useNavigate()
   
-
-
-  const handleLike = async (postId) => {
-    console.log("Post ID in handleLike:", postId);
-    // Dispatch the action to add a like
-    dispatch(createLike({ postId }));
-  };
 
   return (
  
@@ -33,20 +20,14 @@ const Card = ({ post,likes,}) => {
       </div>
       <div className=" flex-item w-full md:w-2/3 bg-white dark:bg-gray-800 dark:text-white flex flex-col space-y-2 p-3 border border-white pl-2 ">
         <div className="flex justify-between item-center ml-6">
-          <p className="text-gray-500 font-medium hidden md:block dark:text-white ">
+          <p className="text-gray-500  hidden md:block dark:text-white text-lg">
             {post.category.name}
           </p>
           <div className="flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={
-                likes?.length > 0
-                  ? "h-5 w-5 text-pink-500 cursor-pointer"
-                  : "h-5 w-5 text-gray-500 cursor-pointer"
-              }
               viewBox="0 0 20 20"
               fill="currentColor"
-              onClick={() => handleLike(post._id)}
             >
               <path
                 fillRule="evenodd"
@@ -54,30 +35,7 @@ const Card = ({ post,likes,}) => {
                 clipRule="evenodd"
               />
             </svg>
-            {/* <span className="pl-1 text-lg text-gray-500">{likes}</span> */}
           </div>
-          {/* <div className="flex">
-            <svg
-              className="h-5 w-5 text-yellow-500"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
-          </div> */}
-
           <div className="flex">
             <svg
               className="w-5 h-5 text-gray-500"

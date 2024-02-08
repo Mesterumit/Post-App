@@ -31,9 +31,9 @@ const NewsCard = () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-4">
       <div className="mb-8 border-b-2 border-opacity-10 dark:border-violet-400">
-        <span className="text-xs font-bold uppercase border-b-2 dark:border-violet-400">
+        <span className="text-lg font-bold uppercase border-b-2 dark:border-violet-400">
           News
         </span>
       </div>
@@ -73,7 +73,7 @@ const NewsCard = () => {
             </div>
           </div>
         )}
-        <div className="flex w-11/12 ">
+        <div className="flex w-11/12 z-5 ">
           <Button
             onClick={handleClick}
             className="mx-auto m-3"

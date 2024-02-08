@@ -36,7 +36,7 @@ const Profile = () => {
             </div>
             <div className="text-center mt-12">
               <h3 className="text-xl font-semibold leading-normal capitalize text-blueGray-700 mb-2">
-                {currentUser?.first_name} {currentUser?.last_name}
+                {currentUser?.first_name.toUpperCase()} {currentUser?.last_name.toUpperCase()}
               </h3>
               <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold">
                 <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400" />

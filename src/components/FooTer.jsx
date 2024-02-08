@@ -35,7 +35,7 @@ const FooTer = () => {
 
   return (
 
-    <div className="w-full">
+    <div className="w-full -z-0">
           <footer className="bg-slate-500 dark:bg-slate-600 fixed bottom-5 mb-8  w-full  -z-1">
           <div className="flex  w-full justify-between items-center p-2 max-sm:grid max-sm:place-content-center max-sm:text-center">
             <div className="flex items-center">

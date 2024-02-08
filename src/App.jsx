@@ -1,4 +1,3 @@
-import { useState,useEffect } from 'react'
 import AppRouter from './router/AppRouter'
 import { Flowbite } from 'flowbite-react'
 import store,{persistor} from './app/store'
@@ -6,23 +5,9 @@ import { Provider } from 'react-redux'
 import {PersistGate}  from 'redux-persist/integration/react'
 
 function App() {
-  // const [persistorReady, setPersistorReady] = useState(false);
-
-  // useEffect(() => {
-  //   persistor.purge(); // Ensure that any existing persisted state is cleared before rehydrating
-  //   persistor
-  //     .persist()
-  //     .then(() => setPersistorReady(true))
-  //     .catch(() => setPersistorReady(true));
-  // }, []);
-
-
-  // if (!persistorReady) {
-  //   // Display a loading indicator until the persistor is ready
-  //   return <div>Loading...</div>;
   
   return (
-    <div className="bg-slate-300 dark:bg-gray-800 dark:text-white">
+    <div className="bg-slate-300 dark:bg-gray-800 dark:text-white ">
       <Flowbite>
         <Provider store={store}>
           {/* persister store */}
