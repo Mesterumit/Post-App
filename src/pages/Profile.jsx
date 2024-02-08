@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { github, gmail, linkedin } from "../helper/iconData";
 
 const Profile = () => {
   const { currentUser } = useSelector((state) => state.auth);
@@ -42,6 +43,29 @@ const Profile = () => {
                 <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400" />
                 {currentUser?.username}
               </div>
+              <div className="flex justify-center max-sm:ml-6">
+              <a
+                rel="noopener noreferrer"
+                href="https://github.com/Mesterumit"
+                target="_blank"
+                className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4">
+                {github}
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="mailto:mesterumit@gmail.com"
+                target="_blank"
+                className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4">
+                {gmail}
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/umitmester"
+                target="_blank"
+                className="text-dark hover:bg-primary hover:border-primary flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white">
+                {linkedin}
+              </a>
+            </div>
               <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold">
                 <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400" />
                 {currentUser?.email}
