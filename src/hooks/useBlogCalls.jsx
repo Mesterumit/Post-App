@@ -33,7 +33,6 @@ const useBlogCalls =()=>{
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.get(`api/users/${currentUser._id}/posts/`);
-      console.log("MYBLOGS----", data)
       dispatch(getSuccess({ data, url: "MyPosts" }));
     } catch (error) {
       dispatch(fetchFail());
