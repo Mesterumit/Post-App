@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const links = [
   {
     title: "Dashboard",
-    path: "/dashboard",
+    path: "/",
   },
   {
     title: "New Blog",
