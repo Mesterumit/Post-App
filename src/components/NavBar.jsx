@@ -50,7 +50,7 @@ const NavBar = () => {
         <DarkThemeToggle className="bg-white dark:bg-slate-500" />
 
         <span
-          onClick={() => navigate("/dashboard")}
+          onClick={() => navigate("/")}
           role="button"
           className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Umit Mester's Blog

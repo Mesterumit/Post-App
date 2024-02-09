@@ -32,7 +32,7 @@ const Dashboard = () => {
                 setData(posts.data.slice(0, 3))
             }
         }
-    }, [posts])
+    },[posts])
 
     const handleClick = index => {
         console.log("HandleClick :", data.length)
