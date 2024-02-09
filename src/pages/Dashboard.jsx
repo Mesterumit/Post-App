@@ -26,7 +26,6 @@ const Dashboard = () => {
 
     //another  useEffect to set our data to posts from the store , i am gonna set the state to hold in store for posts and data will be an array
     useEffect(() => {
-        console.log("posts :", posts)
         if (posts !== null) {
             if (posts.data !== null) {
                 setData(posts.data.slice(0, 3))
@@ -47,7 +46,7 @@ const Dashboard = () => {
     // make the news card
     return (
         <div className="dark:bg-slate-800 h-100 w-full flex  justify-center gap-5 dark:text-white">
-            <div className="p-6 mt-20 flex flex-col w-8/12 max-[600px]:w-full 2xl:w-6/12">
+            <div style={{marginTop:'45px'}} className="p-6 mt-20 flex flex-col w-8/12 max-[600px]:w-full 2xl:w-6/12">
                 {data?.map(post => (
                     <Card  key={post._id} post={post} />
                 ))}
@@ -65,7 +64,7 @@ const Dashboard = () => {
                 )}
             </div>
             {/* render news card component */}
-            <div className="w-3/12 2xl:w-5/12 max-[600px]:hidden ">
+            <div style={{marginTop:'70px'}} className="w-3/12 2xl:w-5/12 max-[600px]:hidden">
                 <NewsCard />
             </div>
         </div>

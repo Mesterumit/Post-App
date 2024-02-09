@@ -31,8 +31,8 @@ const NewsCard = () => {
   }
 
   return (
-    <div className="w-full mt-4">
-      <div className="mb-8 border-b-2 border-opacity-10 dark:border-violet-400">
+    <div className="w-full ">
+      <div className="mb-4 border-b-2 border-opacity-10 dark:border-violet-400 gap-5  mt-20">
         <span className="text-lg font-bold uppercase border-b-2 dark:border-violet-400">
           News
         </span>

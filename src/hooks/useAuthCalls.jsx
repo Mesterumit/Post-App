@@ -22,7 +22,7 @@ const useAuthCalls = () => {
       console.log("Login Payload:", data);
         dispatch(loginSuccess(data));
         // Navigate or perform other actions
-        navigate("/dashboard");
+        navigate("/");
     } catch (err) {
       console.error("Login Error:", err);
       console.error("Login Error:", err.response);
