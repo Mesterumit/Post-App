@@ -19,7 +19,7 @@ const MyBlogs = () => {
   }
   return (
     <>
-      <div className="flex w-full h-100  dark:bg-slate-800 flex-wrap justify-center items-center p-5 h-screen">
+      <div  style={{height:'100%'}}className="flex w-full dark:bg-slate-800 flex-wrap justify-center items-center p-5 h-screen">
         {MyPosts?.userPosts.length > 0 &&
           MyPosts?.userPosts.map(item => <Card
             key={item._id}
