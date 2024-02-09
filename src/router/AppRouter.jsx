@@ -14,24 +14,24 @@ const AppRouter = () => {
     return (
         <Router>
             <NavBar />
-           
-            
+
+
             <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-           
-              
-                
-                
-                
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+
+
+
+
+
 
                 {/* private route */}
                 <Route path="" element={<PrivateRouter />}>
-                <Route path="/newblog" element={<NewBlog />} />
-                 <Route path="/profile" element={<Profile />} />
-                <Route path="/detail/:id" element={<Detail />} />
-                <Route path="/my-blogs" element={<MyBlogs />} />
+                    <Route path="/newblog" element={<NewBlog />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/detail/:id" element={<Detail />} />
+                    <Route path="/my-blogs" element={<MyBlogs />} />
                 </Route>
 
                 <Route path="/about" element={<About />} />

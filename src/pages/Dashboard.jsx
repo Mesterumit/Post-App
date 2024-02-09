@@ -12,23 +12,15 @@ import Loading from "../components/Loading";
 
 
 const Dashboard = () => {
-    // get Blogs from db
     const { getBlogs } = useBlogCalls()
-    // get blogs and loading state from the store
     const { posts, loading } = useSelector(state => state.post)
-
-
-    console.log("POSTS:", posts)
-
-
-    // set some state for blogs
+  
     const [data, setData] = useState();
-    console.log("DATa :", data)
+    
 
     useEffect(() => {
         getBlogs()
-        // createLike()
-    }, [])
+    },[])
 
     //another  useEffect to set our data to posts from the store , i am gonna set the state to hold in store for posts and data will be an array
     useEffect(() => {
