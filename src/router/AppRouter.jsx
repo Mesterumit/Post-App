@@ -15,11 +15,13 @@ const AppRouter = () => {
         <Router>
             <NavBar />
            
-            <br></br>
+            
             <Routes>
+               <Route path="/login" element={<Login />} />
+               <Route path="/register" element={<Register />} />
                 <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />
+                
+                
 
                 {/* private route */}
                 <Route path="" element={<PrivateRouter />}>
