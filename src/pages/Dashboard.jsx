@@ -22,9 +22,7 @@ const Dashboard = () => {
         getBlogs()
     },[])
   
-    setTimeout(()=>{
-        getBlogs()
-    },3000)
+   
 
     //another  useEffect to set our data to posts from the store , i am gonna set the state to hold in store for posts and data will be an array
     useEffect(() => {
