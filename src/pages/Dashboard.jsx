@@ -64,7 +64,7 @@ const Dashboard = () => {
                 )}
             </div>
             {/* render news card component */}
-            <div style={{marginTop:'70px'}} className="w-3/12 2xl:w-5/12 max-[600px]:hidden">
+            <div style={{marginTop:'90px'}} className="w-3/12 2xl:w-5/12 max-[600px]:hidden">
                 <NewsCard />
             </div>
         </div>
