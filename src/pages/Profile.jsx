@@ -4,23 +4,24 @@ import { github, gmail, linkedin } from "../helper/iconData";
 
 const Profile = () => {
   const { currentUser } = useSelector((state) => state.auth);
+  console.log("CURRENT USER BIO",currentUser )
   const { blogs } = useSelector((state) => state.post);
   return (
-    <section style={{height:'100vh'}} className=" bg-blueGray-50 py-8">
-      <div className="w-full  lg:w-8/12 px-4 py-5 mx-auto">
+    <section style={{height:'100vh'}} className=" bg-blueGray-50 py-8 pt-40 mt-40">
+      <div style={{paddingTop:'80px'}} className="w-full  lg:w-8/12 px-4  mx-auto">
         <div className="flex flex-col min-w-0 break-words bg-white dark:bg-gray-800 dark:text-white w-full mb-6 shadow-xl rounded-lg mt-16">
-          <div className="px-6">
-            <div className="flex flex-wrap justify-center mt-10">
+          <div className="pt-24">
+            <div className="flex flex-wrap justify-center mt-20 ">
               <div className="w-full px-4 flex justify-center">
-                <div className="relative">
+                <div className="relative ">
                   <img
                     alt="..."
                     src={currentUser?.image}
-                    className="shadow-xl rounded-full h-24 align-middle border-none max-w-150-px"
+                    className="shadow-xl rounded-full h-24 align-middle border-none max-w-150-px "
                   />
                 </div>
               </div>
-              <div className="w-full px-4 text-center mt-20">
+              <div className="w-full px-4  text-center">
                 <div className="flex justify-center py-4 lg:pt-4 pt-8">
                   <div className="p-3 text-center">
                     <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
@@ -75,7 +76,11 @@ const Profile = () => {
               <div className="flex flex-wrap justify-center">
                 <div className="w-full lg:w-9/12 px-4">
                   <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-                    {currentUser?.bio}
+                  A seasoned Full Stack Developer at Nioyatech, I specialize in leading transformative projects,
+                    delivering user-centric applications, and seamlessly integrating front-end and back-end components.
+                    With a commitment to excellence and a passion for impactful solutions,
+                    I actively seek opportunities to contribute to the evolution of digital environments.
+                    Explore my linkedin and works in my portfolio for exciting possibilities ahead.
                   </p>
                 </div>
               </div>

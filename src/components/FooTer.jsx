@@ -45,7 +45,7 @@ const FooTer = () => {
               </p>
             </div>
             <div className="flex items-center">
-              <p className="text-white text-base">© 2023 Anthony Harold</p>
+              <p className="text-white text-base">© 2023 Umit Mester</p>
             </div>
 
             <div className="flex items-center max-sm:ml-6">

@@ -21,11 +21,6 @@ const AppRouter = () => {
                 <Route path="/register" element={<Register />} />
                 <Route path="/dashboard" element={<Dashboard />} />
 
-
-
-
-
-
                 {/* private route */}
                 <Route path="" element={<PrivateRouter />}>
                     <Route path="/newblog" element={<NewBlog />} />
