@@ -52,7 +52,6 @@ const useBlogCalls =()=>{
   //!------------- POST CALLS ----------------
   const postBlogData = async (info, url, callback) => {
     try {
-      console.log("INFO-------", info)
       await axiosWithToken.post(`api/${url}`, info);
       toastSuccessNotify(`${url} successfuly added`);
       if (info.post) {
@@ -83,7 +82,7 @@ const useBlogCalls =()=>{
       await axiosWithToken.delete(`api/${url}/${id}/`);
       toastSuccessNotify(`${url} successfuly deleted`);
       getBlogData(url);
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       console.log(error);
       toastErrorNotify(`${url} can not be deleted`);

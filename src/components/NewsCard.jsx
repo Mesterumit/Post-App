@@ -9,12 +9,9 @@ import Loading from "./Loading";
 const NewsCard = () => {
   const [sliceData, setSliceData] = useState([]);
 
-  console.log("render");
-
   const dispatch = useDispatch();
   const { news, loading } = useSelector(state => state.news);
 
-  console.log("NEWS", news)
   useEffect(() => {
     dispatch(getNews());
   }, [dispatch]);
