@@ -42,7 +42,7 @@ const useAuthCalls = () => {
       dispatch(logoutSuccess());
       
     //   toastSuccessNotify("Logout performed");
-    navigate("/register");
+    navigate("/");
     } catch (err) {
         console.log(err)
       dispatch(fetchFail());
