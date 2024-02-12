@@ -119,7 +119,7 @@ const Detail = () => {
     return (
         <>
             {!loading ? (
-                <article className=" my-auto  max-w-2xl px-auto py-12 mx-auto space-y-8 h-screen h-100 dark:bg-gray-800 dark:text-gray-50 ">
+                <article style={{marginTop:'90px'}} className=" my-auto  max-w-2xl px-auto py-12 mx-auto space-y-8 h-screen h-100 dark:bg-gray-800 dark:text-gray-50 ">
                     <div className="w-full bg-white grid place-items-center detail">
                         <img src={detail?.data?.image} alt={detail?.data?.title} className="rounded-xl" />
                     </div>
