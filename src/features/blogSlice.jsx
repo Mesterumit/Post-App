@@ -7,13 +7,13 @@ const blogSlice = createSlice({
     posts: null,
     MyPosts:null,
     categories: null,
-    loading: false,
+    loading:false,
     error: false,
   },
   reducers: {
     fetchStart: (state) => {
-      state.loading = true;
-      state.error = false;
+      state.loading =true;
+      state.error =false;
     },
     getSuccess: (state, { payload: { data, url } }) => {
       console.log("Category---",url, data)

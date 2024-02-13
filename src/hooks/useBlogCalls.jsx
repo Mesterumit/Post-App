@@ -15,6 +15,7 @@ const useBlogCalls =()=>{
 
     //!------------- GET CALLS ----------------
   const getBlogData = async url => {
+    console.log("-------Fetch start--------")
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.get(`api/${url}/`);

@@ -21,6 +21,8 @@ const Dashboard = () => {
     useEffect(() => {
         getBlogs()
     },[])
+
+ 
   
    
 
@@ -32,9 +34,12 @@ const Dashboard = () => {
             }
         }
     },[posts])
+   
+    useEffect(()=>{
+        setData()
+      },[])
 
-    const handleClick = index => {
-        console.log("HandleClick :", data.length)
+    const handleClick = ()=> {
         data?.length > 3  ? setData(posts.data.slice(0,3)) : setData(posts.data.slice(0, 4));
     };
 
