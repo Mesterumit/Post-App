@@ -33,7 +33,7 @@ const NavBar = () => {
  
   setTimeout(()=>{
     navigate("/")
-  },3000)
+  },2000)
   const navigate = useNavigate();
 
   return (
