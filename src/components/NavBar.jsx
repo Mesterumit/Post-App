@@ -30,14 +30,16 @@ const links = [
 const NavBar = () => {
   const { logout } = useAuthCalls();
   const  currentUser  = useSelector(state => state.auth.currentUser);
-
-  useEffect(()=>{
-    navigate("/")
-  },[])
-  // setTimeout(()=>{
-  //   navigate("/")
-  // },2000)
   const navigate = useNavigate();
+
+  let timeoutFlag = false;
+
+if (!timeoutFlag) {
+  setTimeout(() => {
+    navigate("/");
+    timeoutFlag = true;
+  }, 2000);
+}
 
   return (
     <>
