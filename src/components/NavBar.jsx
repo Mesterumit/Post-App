@@ -2,7 +2,7 @@ import { Avatar, DarkThemeToggle, Dropdown } from "flowbite-react";
 import useAuthCalls from "../hooks/useAuthCalls";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useEffect} from 'react'
+import { useEffect, useState} from 'react'
 
 const links = [
   {
@@ -31,14 +31,15 @@ const NavBar = () => {
   const { logout } = useAuthCalls();
   const  currentUser  = useSelector(state => state.auth.currentUser);
   const navigate = useNavigate();
+  const [run,setRun] = useState(true)
+  
 
-  let timeoutFlag = false;
-
-if (!timeoutFlag) {
+if (run == true) {
   setTimeout(() => {
+    setRun(false)
     navigate("/");
-    timeoutFlag = true;
-  }, 2000);
+    
+  },2000);
 }
 
   return (
