@@ -31,17 +31,9 @@ const NavBar = () => {
   const  currentUser  = useSelector(state => state.auth.currentUser);
 
  
-  
-// const currentUser = {
-//     id:58,
-//     username:'umitmester',
-//     first_name: 'Umit',
-//     last_name: 'Mester',
-//     email: 'umit@gmail.com',
-//     image: 'https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png',
-//     bio: "I am Umit",
-//     token: "yes"
-// }
+  setTimeout(()=>{
+    navigate("/")
+  },3000)
   const navigate = useNavigate();
 
   return (
