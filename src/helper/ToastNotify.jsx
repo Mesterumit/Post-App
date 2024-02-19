@@ -13,7 +13,7 @@ export const toastWarnNotify = (msg) => {
 };
 export const toastSuccessNotify = (msg) => {
   toast.success(msg, {
-    autoClose: 1500,
+    autoClose: 2000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,

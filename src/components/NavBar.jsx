@@ -34,12 +34,11 @@ const NavBar = () => {
   const [run,setRun] = useState(true)
   
 
-if (run == true) {
+if (run) {
   setTimeout(() => {
     setRun(false)
-    navigate("/");
-    
-  },2000);
+    navigate("/");    
+  },1000);
 }
 
   return (

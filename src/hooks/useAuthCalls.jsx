@@ -8,7 +8,7 @@ import {
 } from "../features/authSlice";
 import { axiosPublic } from "./useAxios";
 import { useNavigate } from "react-router-dom";
-
+import {toastSuccessNotify,toastErrorNotify} from '../helper/ToastNotify'
 
 const useAuthCalls = () => {
   const dispatch = useDispatch();
@@ -21,8 +21,9 @@ const useAuthCalls = () => {
       const { data } = await axiosPublic.post("/api/auth/login", userInfo);
       console.log("Login Payload:", data);
         dispatch(loginSuccess(data));
-        toastSuccessNotify("Login performed");
         navigate("/");
+        toastSuccessNotify("Login performed");
+       
     } catch (err) {
       console.error("Login Error:", err);
       console.error("Login Error:", err.response);
@@ -40,9 +41,9 @@ const useAuthCalls = () => {
     try {
       await axiosPublic.post("/api/auth/logout");
       dispatch(logoutSuccess());
-      
+      navigate("/");
       toastSuccessNotify("Logout performed");
-    navigate("/");
+    
     } catch (err) {
         console.log(err)
       dispatch(fetchFail());

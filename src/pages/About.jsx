@@ -1,5 +1,5 @@
 import React from "react";
-import umit from "../assets/about.png";
+import umit from "../assets/about.png"
 import { github, gmail, linkedin } from "../helper/iconData";
 
 const About = () => {

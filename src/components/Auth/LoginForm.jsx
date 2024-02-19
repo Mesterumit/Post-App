@@ -19,9 +19,7 @@ const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
   const { loading } = useSelector(state => state.auth);
   const dispatch = useDispatch()
 
-// setTimeout(() => {
-//   dispatch(fetchFail(false)); 
-// },3000) 
+
   console.log("LOADING :", loading)
   return (
     <section className="h-screen mb-9 w-full  bg-white dark:bg-gray-800 dark:text-white">
