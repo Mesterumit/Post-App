@@ -21,7 +21,7 @@ const useAuthCalls = () => {
       const { data } = await axiosPublic.post("/api/auth/login", userInfo);
       console.log("Login Payload:", data);
         dispatch(loginSuccess(data));
-        // Navigate or perform other actions
+        toastSuccessNotify("Login performed");
         navigate("/");
     } catch (err) {
       console.error("Login Error:", err);
@@ -41,12 +41,12 @@ const useAuthCalls = () => {
       await axiosPublic.post("/api/auth/logout");
       dispatch(logoutSuccess());
       
-    //   toastSuccessNotify("Logout performed");
+      toastSuccessNotify("Logout performed");
     navigate("/");
     } catch (err) {
         console.log(err)
       dispatch(fetchFail());
-    //   toastErrorNotify("Logout can not be performed");
+      toastErrorNotify("Logout can not be performed");
     }
   };
 
@@ -58,12 +58,12 @@ const useAuthCalls = () => {
       console.log("Data:", data);
   
       dispatch(registerSuccess(data));
-      // toastSuccessNotify("Register performed");
+      toastSuccessNotify("Register performed");
       navigate("/login");
     } catch (err) {
       console.error("Registration Error:", err);
       dispatch(fetchFail());
-      // toastErrorNotify("Register can not be performed");
+      toastErrorNotify("Register can not be performed");
     }
   };
   

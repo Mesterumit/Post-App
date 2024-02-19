@@ -26,9 +26,9 @@ const FooTer = () => {
 
   useEffect(() => {
     if (currentUser) {
-      setCity('Boston');
+      setCity('Newton');
     } else {
-      setCity("New York");
+      setCity("Boston");
     }
   }, [currentUser])
 
