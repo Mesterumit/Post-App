@@ -19,6 +19,9 @@ const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
   const { loading } = useSelector(state => state.auth);
   const dispatch = useDispatch()
 
+  setTimeout(()=>{
+    loading = !loading
+  },4000)
 
   console.log("LOADING :", loading)
   return (

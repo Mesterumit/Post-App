@@ -71,7 +71,7 @@ const PostForm = ({ info,handleChange,  handleSubmit }) => {
               required="required"
               name="category"
               id="category"
-              value={info.category || ""}
+              value={info.categories || ""}
               onChange={handleChange}>
               {categories?.data.map(item => (
                 <option key={item._id} value={item._id}>

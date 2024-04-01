@@ -7,7 +7,7 @@ import {PersistGate}  from 'redux-persist/integration/react'
 function App() {
   
   return (
-    <div className="bg-slate-300 dark:bg-gray-800 dark:text-white ">
+    <div  style={{height:"100%"}} className="bg-slate-300 dark:bg-gray-800 dark:text-white h-100 ">
       <Flowbite>
         <Provider store={store}>
           {/* persister store */}

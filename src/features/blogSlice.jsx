@@ -14,9 +14,10 @@ const blogSlice = createSlice({
     fetchStart: (state) => {
       state.loading =true;
       state.error =false;
+    
     },
     getSuccess: (state, { payload: { data, url } }) => {
-      console.log("Category---",url, data)
+      console.log("Categories---",url)
       state.loading = false;
       state[url] = data;
     },

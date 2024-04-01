@@ -43,7 +43,7 @@ if (run) {
 
   return (
     <>
-      <nav className="dark:bg-slate-800 bg-slate-500 flex justify-between items-center p-4 text-white fixed top-0 w-full z-10 mb-10 ">
+      <nav className="dark:bg-slate-800 bg-slate-500 flex justify-between items-center text-white fixed top-0 w-full z-10 mb-10 ">
         <DarkThemeToggle className="bg-white dark:bg-slate-500" />
 
         <span

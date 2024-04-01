@@ -19,13 +19,21 @@ const MyBlogs = () => {
   }
   return (
     <>
-      <div  style={{height:'100%'}}className="flex w-full dark:bg-slate-800 flex-wrap justify-center items-center p-5 h-screen">
-        {MyPosts?.userPosts.length > 0 &&
+ 
+      <div    className="flex w-full dark:bg-slate-900 flex-wrap justify-center items-center p-5 h-100 overflow-hidden "
+       style={{
+        height: '90vh',
+        backgroundColor:'bg-slate-900'
+       }}>
+        {MyPosts ? MyPosts?.userPosts.length > 0 &&
           MyPosts?.userPosts.map(item => <Card
             key={item._id}
             post={item}
-          />)}
+          />) :(
+            <h1 className="flex w-full dark:bg-slate-900 flex-wrap justify-center items-center p-5 h-100  mt-2">No Post yet...</h1>
+          ) }
       </div>
+      
     </>
   );
 };

@@ -14,11 +14,13 @@ const useBlogCalls =()=>{
     const {axiosWithToken,axiosWithoutToken} = useAxios()
 
     //!------------- GET CALLS ----------------
-  const getBlogData = async url => {
+  const getBlogData = async (url) => {
     console.log("-------Fetch start--------")
+    console.log("-------url--------",url)
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.get(`api/${url}/`);
+      console.log("DATA",data)
       dispatch(getSuccess({ data, url }));
     } catch (error) {
       dispatch(fetchFail());
@@ -52,6 +54,9 @@ const useBlogCalls =()=>{
 
   //!------------- POST CALLS ----------------
   const postBlogData = async (info, url, callback) => {
+    console.log("=====getting categories====")
+    console.log("URL",url)
+    console.log("INFO",info)
     try {
       await axiosWithToken.post(`api/${url}`, info);
       toastSuccessNotify(`${url} successfuly added`);
@@ -94,7 +99,7 @@ const useBlogCalls =()=>{
     if (currentUser) {
       getCategories();
     }
-  },[currentUser]);
+  },[]);
   return{
     getBlogs,
     postComments,
