@@ -31,10 +31,10 @@
 body {
   overflow-x: hidden;
 }
-.footer{
-  margin-bottom:5px !important;
-  padding-bottom:5px !important;
-}
+/* .footer{
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
+} */
 
 ::before,
 ::after {

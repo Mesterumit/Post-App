@@ -35,9 +35,9 @@ const FooTer = () => {
 
   return (
 
-    <div className="w-full -z-0">
-          <footer className="bg-slate-500 dark:bg-slate-600 fixed bottom-5 mb-8  w-full  -z-1">
-          <div className="flex  w-full justify-between items-center p-2 max-sm:grid max-sm:place-content-center max-sm:text-center">
+    <div className=" dark:bg-slate-800 bg-slate-500 flex justify-between items-center text-white fixed bottom-5 w-full z-10 ">
+          <footer className="bg-slate-500 dark:bg-slate-600 fixed     w-full">
+          <div className=" flex  w-full justify-between items-center p-2 max-sm:grid max-sm:place-content-center max-sm:text-center">
             <div className="flex items-center">
               <p className="text-base text-white">
                 {weather?.name} {Math.round(weather?.main?.temp)}
